@@ -558,3 +558,443 @@ a {
         transform: translateY(-4px);
     }
 }
+
+/* ==============================
+   PROJECTS SECTION
+================================ */
+
+.projects {
+    background: #0b0b12;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 45px;
+}
+
+.project-card {
+    position: relative;
+    padding: 30px;
+    min-height: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.06),
+        rgba(255, 255, 255, 0.015)
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 18px;
+    overflow: hidden;
+
+    transition: all 0.35s ease;
+}
+
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #9b5cff,
+        #6c63ff,
+        transparent
+    );
+
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-9px);
+    border-color: rgba(155, 92, 255, 0.55);
+    box-shadow: 0 15px 40px rgba(108, 99, 255, 0.12);
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.project-number {
+    color: #a78bfa;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.project-status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    color: #fbbf24;
+    background: rgba(251, 191, 36, 0.1);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.project-card h3 {
+    color: #ffffff;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    color: #a1a1aa;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 25px;
+}
+
+.project-tech {
+    padding: 6px 12px;
+    font-size: 12px;
+    color: #c4b5fd;
+    background: rgba(139, 92, 246, 0.12);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.project-tech:hover {
+    background: #8b5cf6;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.project-links {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.project-link {
+    color: #c4b5fd;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: #ffffff;
+}
+
+.project-link.disabled-link {
+    color: #666675;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.projects-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.project-card {
+    padding: 24px;
+    min-height: auto;
+}
+
+.project-card h3 {
+    font-size: 21px;
+}
+
+
+/* Project Preview */
+
+.project-preview {
+    height: 130px;
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #17152b, #10101a);
+    border: 1px solid rgba(167, 139, 250, 0.15);
+    overflow: hidden;
+}
+
+.preview-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #a78bfa;
+}
+
+.preview-window {
+    margin-top: 14px;
+    padding: 10px;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.preview-dots {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 12px;
+}
+
+.preview-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #8b5cf6;
+}
+
+.preview-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.preview-lines span {
+    height: 4px;
+    border-radius: 5px;
+    background: rgba(167, 139, 250, 0.25);
+}
+
+.preview-lines span:nth-child(1) {
+    width: 65%;
+}
+
+.preview-lines span:nth-child(2) {
+    width: 85%;
+}
+
+.preview-lines span:nth-child(3) {
+    width: 45%;
+}
+
+/* Project Preview - Mobile Responsive */
+
+.project-preview {
+    height: 115px;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.preview-label {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+}
+
+.preview-window {
+    margin-top: 10px;
+    padding: 8px;
+}
+
+.preview-dots {
+    gap: 4px;
+    margin-bottom: 9px;
+}
+
+.preview-dots span {
+    width: 5px;
+    height: 5px;
+}
+
+.preview-lines {
+    gap: 5px;
+}
+
+.preview-lines span {
+    height: 3px;
+}
+
+/* ==============================
+   INTERNSHIP EXPERIENCE SECTION
+================================ */
+
+.experience {
+    background: #0e0e17;
+}
+
+.experience-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 45px;
+}
+
+.experience-card {
+    padding: 28px;
+    position: relative;
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.055),
+        rgba(255, 255, 255, 0.015)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 18px;
+    transition: all 0.35s ease;
+    overflow: hidden;
+}
+
+.experience-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(155, 92, 255, 0.5);
+    box-shadow: 0 15px 40px rgba(108, 99, 255, 0.12);
+}
+
+.experience-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.experience-number {
+    color: #a78bfa;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.experience-duration {
+    color: #fbbf24;
+    background: rgba(251, 191, 36, 0.1);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+.experience-card h3 {
+    color: #ffffff;
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.experience-card h4 {
+    color: #a78bfa;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.experience-card p {
+    color: #a1a1aa;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.experience-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 25px;
+}
+
+.experience-tech {
+    color: #c4b5fd;
+    background: rgba(139, 92, 246, 0.12);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    padding: 6px 11px;
+    border-radius: 6px;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.experience-tech:hover {
+    background: #8b5cf6;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* Certificate Area */
+
+.certificate-section {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.certificate-section h5 {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.certificate-image-link {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 9px;
+    border: 1px solid rgba(167, 139, 250, 0.2);
+}
+
+.certificate-image-link img {
+    display: block;
+    width: 100%;
+    max-height: 190px;
+    object-fit: contain;
+    background: #171520;
+    transition: transform 0.4s ease;
+}
+
+.certificate-image-link:hover img {
+    transform: scale(1.04);
+}
+
+.certificate-link {
+    display: inline-block;
+    width: fit-content;
+    color: #c4b5fd;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.certificate-link:hover {
+    color: #ffffff;
+}
+
+.certificate-pending {
+    display: inline-block;
+    width: fit-content;
+    color: #777789;
+    font-size: 12px;
+    padding: 9px 13px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+    border-radius: 7px;
+}
+
+
+/* Desktop: 2 cards per row */
+.experience-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* Mobile: 1 card per row */
+@media (max-width: 768px) {
+    .experience-container {
+        grid-template-columns: 1fr;
+    }
+}
