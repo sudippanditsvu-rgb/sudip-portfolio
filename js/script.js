@@ -279,3 +279,61 @@ internshipData.forEach(function(internship, index) {
     experienceContainer.appendChild(experienceCard);
 
 });
+
+
+// Contact Form Validation
+
+const contactForm = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
+
+contactForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    // Get form values
+    const name = document.getElementById("contactName").value.trim();
+    const email = document.getElementById("contactEmail").value.trim();
+    const subject = document.getElementById("contactSubject").value.trim();
+    const message = document.getElementById("contactMessage").value.trim();
+
+    // Check empty fields
+    if (!name || !email || !subject || !message) {
+        formMessage.textContent = "Please fill in all fields.";
+        return;
+    }
+
+    // Check name length
+    if (name.length < 2) {
+        formMessage.textContent = "Please enter a valid name.";
+        return;
+    }
+
+    // Check email format
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(email)) {
+        formMessage.textContent = "Please enter a valid email address.";
+        return;
+    }
+
+    // Check message length
+    if (message.length < 10) {
+        formMessage.textContent = "Message must contain at least 10 characters.";
+        return;
+    }
+
+    // Validation successful
+    formMessage.textContent = "Form validated successfully! Email sending will be enabled soon.";
+
+    formFormReset();
+});
+
+function formFormReset() {
+    contactForm.reset();
+}
+
+
+// Dynamic Copyright Year
+const currentYear = document.getElementById("currentYear");
+
+currentYear.textContent = new Date().getFullYear();

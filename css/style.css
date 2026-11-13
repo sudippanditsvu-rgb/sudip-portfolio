@@ -998,3 +998,267 @@ a {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* ==============================
+   CONTACT SECTION
+================================ */
+
+.contact {
+    background: #0b0b12;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 50px;
+    margin-top: 45px;
+    align-items: start;
+}
+
+/* Contact Information */
+
+.contact-info h3 {
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.contact-info > p {
+    color: #a1a1aa;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.contact-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    color: #c4b5fd;
+    background: rgba(139, 92, 246, 0.12);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.contact-detail h4 {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.contact-detail p,
+.contact-detail a {
+    color: #a1a1aa;
+    font-size: 13px;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.contact-detail a:hover {
+    color: #a78bfa;
+}
+
+/* Contact Form */
+
+.contact-form {
+    padding: 30px;
+    border-radius: 18px;
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.055),
+        rgba(255, 255, 255, 0.015)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    color: #e4e4e7;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9px;
+    outline: none;
+    font-family: inherit;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #71717a;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+.contact-btn {
+    width: 100%;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 9px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.25);
+}
+
+.contact-btn span {
+    margin-left: 6px;
+}
+
+.form-message {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #a78bfa;
+}
+
+
+/* Contact Mobile Responsive */
+
+.contact-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.contact-info h3 {
+    font-size: 24px;
+}
+
+.contact-info > p {
+    margin-bottom: 25px;
+}
+
+.contact-form {
+    padding: 22px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.contact-btn {
+    padding: 13px;
+}
+
+
+.footer {
+    padding: 45px 8% 20px;
+    background: #08080d;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.footer-logo {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.footer-logo span {
+    color: #a78bfa;
+}
+
+.footer-container > p {
+    color: #a1a1aa;
+    font-size: 13px;
+    margin: 12px 0 25px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.footer-links a,
+.footer-bottom a {
+    color: #a1a1aa;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-bottom a:hover {
+    color: #a78bfa;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-bottom p {
+    color: #71717a;
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 35px 6% 18px;
+    }
+
+    .footer-links {
+        gap: 16px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
