@@ -337,3 +337,99 @@ function formFormReset() {
 const currentYear = document.getElementById("currentYear");
 
 currentYear.textContent = new Date().getFullYear();
+
+
+/* =========================================
+   PORTFOLIO THEME SWITCHER
+========================================= */
+
+const themeToggle = document.getElementById("themeToggle");
+const themeMenu = document.getElementById("themeMenu");
+const themeIcon = document.getElementById("themeIcon");
+const themeOptions = document.querySelectorAll(".theme-option");
+
+const availableThemes = ["dark", "light", "ocean", "emerald"];
+
+const themeIcons = {
+    dark: "◐",
+    light: "☀",
+    ocean: "🌊",
+    emerald: "🌿"
+};
+
+// Apply selected theme
+function applyTheme(theme) {
+
+    if (!availableThemes.includes(theme)) {
+        theme = "dark";
+    }
+
+    document.documentElement.setAttribute("data-theme", theme);
+
+    themeIcon.textContent = themeIcons[theme];
+
+    // Save selected theme
+    localStorage.setItem("portfolioTheme", theme);
+
+    // Update active theme option
+    themeOptions.forEach(option => {
+        const isActive = option.dataset.theme === theme;
+
+        option.classList.toggle("active", isActive);
+        option.setAttribute("aria-pressed", isActive);
+    });
+}
+
+// Load saved theme
+const savedTheme = localStorage.getItem("portfolioTheme") || "dark";
+
+applyTheme(savedTheme);
+
+
+// Open and close theme menu
+themeToggle.addEventListener("click", function () {
+
+    const isOpen = themeMenu.classList.toggle("show");
+
+    themeToggle.setAttribute("aria-expanded", isOpen);
+});
+
+
+// Select a theme
+themeOptions.forEach(option => {
+
+    option.addEventListener("click", function () {
+
+        const selectedTheme = this.dataset.theme;
+
+        applyTheme(selectedTheme);
+
+        themeMenu.classList.remove("show");
+        themeToggle.setAttribute("aria-expanded", "false");
+    });
+
+});
+
+
+// Close menu when clicking outside
+document.addEventListener("click", function (event) {
+
+    if (
+        !event.target.closest(".theme-switcher")
+    ) {
+        themeMenu.classList.remove("show");
+        themeToggle.setAttribute("aria-expanded", "false");
+    }
+
+});
+
+
+// Close menu with Escape key
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+        themeMenu.classList.remove("show");
+        themeToggle.setAttribute("aria-expanded", "false");
+    }
+
+});

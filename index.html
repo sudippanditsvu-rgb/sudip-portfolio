@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -16,31 +16,82 @@
 <body>
 
         
+    
     <header class="header">
 
         <nav class="navbar">
 
             <a href="#home" class="logo">SP<span>.</span></a>
 
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <!-- Right Side Navigation Group -->
+            <div class="nav-right">
 
+                <!-- Navigation Links -->
+                <div class="nav-menu">
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Theme Switcher -->
+                
+                <div class="nav-actions">
+
+                    <div class="theme-switcher">
+                        <button
+                            class="theme-toggle"
+                            id="themeToggle"
+                            aria-label="Choose website theme"
+                            aria-expanded="false"
+                            type="button"
+                        >
+                            <span id="themeIcon">◐</span>
+                        </button>
+
+                        <div class="theme-menu" id="themeMenu">
+                            <button type="button" class="theme-option active" data-theme="dark">
+                                <span class="theme-color dark-color"></span>
+                                Dark
+                            </button>
+
+                            <button type="button" class="theme-option" data-theme="light">
+                                <span class="theme-color light-color"></span>
+                                Light
+                            </button>
+
+                            <button type="button" class="theme-option" data-theme="ocean">
+                                <span class="theme-color ocean-color"></span>
+                                Ocean
+                            </button>
+
+                            <button type="button" class="theme-option" data-theme="emerald">
+                                <span class="theme-color emerald-color"></span>
+                                Emerald
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Mobile Menu Button -->
             <button class="menu-toggle" id="menuToggle"
-                    aria-label="Toggle navigation"
-                    aria-expanded="false">
+                aria-label="Toggle navigation"
+                aria-expanded="false">
                 ☰
             </button>
 
         </nav>
 
     </header>
+
 
 
     <main>
