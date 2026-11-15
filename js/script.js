@@ -85,8 +85,8 @@ const projectData = [
         description: "A personal portfolio website to showcase my skills, education and development journey.",
         technologies: ["HTML", "CSS", "JavaScript"],
         status: "In Progress",
-        demo: "",
-        github: ""
+        demo: "https://sudippanditsvu-rgb.github.io/sudip-portfolio/",
+        github: "https://github.com/sudippanditsvu-rgb/sudip-portfolio"
     },
     {
         title: "Prompttrase",
@@ -183,11 +183,11 @@ const internshipData = [
     {
         title: "Android Development Internship",
         company: "ARDENT Computech",
-        duration: "7 Days",
+        duration: "1 Dec 2023 – 30 Dec 2023",
         description: "Worked on an Android News App using Java, including news categories and API-based news fetching.",
         technologies: ["Java", "Android", "API"],
         certificateImage: "",
-        certificateLink: ""
+        certificateLink: "https://certificate.ardentsoftware.co.in/generate/86497"
     },
     {
         title: "Data Analysis Internship",
@@ -196,7 +196,7 @@ const internshipData = [
         description: "Completed an internship in Data Analysis at ARDENT Computech.",
         technologies: ["Data Analysis"],
         certificateImage: "",
-        certificateLink: ""
+        certificateLink: "https://certificate.ardentsoftware.co.in/generate/187061"
     }
 ];
 
@@ -281,34 +281,42 @@ internshipData.forEach(function(internship, index) {
 });
 
 
-// Contact Form Validation
+
+
+/* =========================================
+   EMAILJS CONTACT FORM
+========================================= */
+
+// EmailJS initialization
+emailjs.init({
+    publicKey: "n3kQuyVRyks8HM8Pd"
+});
 
 const contactForm = document.getElementById("contactForm");
 const formMessage = document.getElementById("formMessage");
 
-contactForm.addEventListener("submit", function(event) {
+const submitButton = contactForm.querySelector(".contact-btn");
+
+contactForm.addEventListener("submit", async function (event) {
 
     event.preventDefault();
 
-    // Get form values
     const name = document.getElementById("contactName").value.trim();
     const email = document.getElementById("contactEmail").value.trim();
     const subject = document.getElementById("contactSubject").value.trim();
     const message = document.getElementById("contactMessage").value.trim();
 
-    // Check empty fields
+    // Basic validation
     if (!name || !email || !subject || !message) {
         formMessage.textContent = "Please fill in all fields.";
         return;
     }
 
-    // Check name length
     if (name.length < 2) {
         formMessage.textContent = "Please enter a valid name.";
         return;
     }
 
-    // Check email format
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailPattern.test(email)) {
@@ -316,21 +324,53 @@ contactForm.addEventListener("submit", function(event) {
         return;
     }
 
-    // Check message length
     if (message.length < 10) {
         formMessage.textContent = "Message must contain at least 10 characters.";
         return;
     }
 
-    // Validation successful
-    formMessage.textContent = "Form validated successfully! Email sending will be enabled soon.";
+    // Sending email
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending...";
 
-    formFormReset();
+    formMessage.textContent = "";
+
+    try {
+
+        await emailjs.send(
+            "service_oz6138n",
+            "template_lk47pid",
+            {
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            }
+        );
+
+        formMessage.textContent = "Message sent successfully! Thank you for contacting me.";
+
+        formMessage.style.color = "#22c55e";
+
+        contactForm.reset();
+
+    } catch (error) {
+
+        console.error("EmailJS Error:", error);
+
+        formMessage.textContent = "Message could not be sent. Please try again.";
+
+        formMessage.style.color = "#ef4444";
+
+    } finally {
+
+        submitButton.disabled = false;
+        submitButton.innerHTML = 'Send Message <span>↗</span>';
+
+    }
+
 });
 
-function formFormReset() {
-    contactForm.reset();
-}
 
 
 // Dynamic Copyright Year

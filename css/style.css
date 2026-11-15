@@ -1555,3 +1555,12 @@ textarea {
         right: 0;
     }
 }
+
+
+
+.contact-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
